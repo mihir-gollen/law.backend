@@ -4,12 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pdfplumber = "*"
 langchain = "*"
-langchain-community = "*"
-langchain-huggingface = "*"
-faiss-cpu = "*"
-pypdf = "*"
+langchain_community = "*"
+langchain_huggingface = "*"
+sentence-transformers = "*"
+torch = "*"
 streamlit = "*"
+python-dotenv = "*"
+faiss-cpu = "*"
 
 [dev-packages]
 
