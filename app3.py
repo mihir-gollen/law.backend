@@ -8,12 +8,26 @@ from langchain_core.prompts import PromptTemplate
 from langchain_huggingface import HuggingFaceEndpoint
 from langchain_huggingface import HuggingFaceEmbeddings
 import torch
+import requests
 import re
 
 torch.device("cpu")
 torch.backends.cudnn.enabled = False
 torch.cuda.is_available = lambda: False
 torch.set_default_tensor_type(torch.FloatTensor)
+
+def download_vectorstore():
+    if not os.path.exists(DB_FAISS_PATH):
+        st.write("Downloading vectorstore...")
+        url = "https://raw.githubusercontent.com/mihir_gollen/law.backend/main/vectorstore/db_faiss"
+        r = requests.get(url)
+        os.makedirs("vectorstore", exist_ok=True)
+        with open(DB_FAISS_PATH, "wb") as f:
+            f.write(r.content)
+        st.write("Download complete.")
+
+download_vectorstore()
+
 
 torch.set_default_dtype(torch.float32)
 torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__)]
