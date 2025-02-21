@@ -97,7 +97,7 @@ def set_custom_prompt():
 
 # Load LLM from Hugging Face
 def load_llm():
-    HF_TOKEN = os.environ.get("HUGGINGFACE_API_TOKEN")
+    HF_TOKEN = os.environ.get("HF_TOKEN")
     if not HF_TOKEN:
         st.error("Hugging Face API token is missing. Please set it in your environment variables.")
         return None

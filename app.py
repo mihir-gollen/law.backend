@@ -56,7 +56,7 @@ def load_llm():
         st.error("Hugging Face API token is missing. Please set it in your environment variables.")
         return None
 
-    HUGGINGFACE_REPO_ID = "mistralai/mistral-7b-instruct-v0.1"
+    HUGGINGFACE_REPO_ID = "mistralai/mistral-7b-instruct-v0.3"
 
     try:
         llm = HuggingFaceEndpoint(
