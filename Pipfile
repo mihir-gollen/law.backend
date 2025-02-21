@@ -9,7 +9,7 @@ langchain = "*"
 langchain_community = "*"
 langchain_huggingface = "*"
 sentence-transformers = "*"
-torch = "*"
+torch = {version = "*", index = "pypi", markers = "platform_system != 'Darwin'"}
 streamlit = "*"
 python-dotenv = "*"
 faiss-cpu = "*"

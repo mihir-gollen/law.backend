@@ -10,6 +10,11 @@ from langchain_huggingface import HuggingFaceEmbeddings
 import torch
 import re
 
+torch.device("cpu")
+torch.backends.cudnn.enabled = False
+torch.cuda.is_available = lambda: False
+torch.set_default_tensor_type(torch.FloatTensor)
+
 torch.set_default_dtype(torch.float32)
 torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__)]
 
