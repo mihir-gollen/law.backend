@@ -1,0 +1,6 @@
+$env:HUGGINGFACE_API_TOKEN="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"
+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
+$env:HUGGINGFACE_API_TOKEN="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"
+mistralai/Mistral-7B-Instruct-v0.3
+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
+$env:HUGGINGFACE_API_TOKEN="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"
