@@ -50,7 +50,7 @@ st.markdown("""
             margin-bottom: 10px;
         }
         .assistant-message {
-            background-color: #d5e8d4;
+            background-color:rgb(155, 244, 151);
             padding: 12px;
             border-radius: 10px;
             margin-bottom: 10px;
@@ -83,14 +83,14 @@ def get_vectorstore():
 def set_custom_prompt():
     return PromptTemplate(
         template="""
-        Use the following context to answer the user's question **in a professional and structured manner**.
-        Provide legal explanations with case references and clear formatting.
+        Use the following context to answer the user's question in a professional and structured manner.
+        Provide legal explanations with case references and clear formatting .
 
         Context: {context}
 
         Question: {question}
 
-        Answer: Please ensure clarity, accuracy, and use structured formatting.
+        Answer: Please ensure clarity, accuracy, and use structured formatting. also, do not add unnecessary symbols.
         """,
         input_variables=["context", "question"]
     )
@@ -197,7 +197,7 @@ def main():
 
                 # Display response
                 st.session_state.messages.append({'role': 'assistant', 'content': final_response})
-                st.markdown(f"<div class='assistant-message'><b>Assistant:</b> {result}</div>", unsafe_allow_html=True)
+                st.markdown(f"<div class='assistant-message'><b>Assistant:</b> {result} ", unsafe_allow_html=True)
 
             except Exception as e:
                 st.error(f"Error processing query: {str(e)}")
