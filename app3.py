@@ -16,6 +16,8 @@ torch.backends.cudnn.enabled = False
 torch.cuda.is_available = lambda: False
 torch.set_default_tensor_type(torch.FloatTensor)
 
+DB_FAISS_PATH="vectorstore\db_faiss"
+
 def download_vectorstore():
     if not os.path.exists(DB_FAISS_PATH):
         st.write("Downloading vectorstore...")
