@@ -1,0 +1,9 @@
+pdfplumber
+langchain
+langchain_community
+langchain_huggingface
+sentence-transformers
+torch
+streamlit
+python-dotenv
+faiss-cpu
