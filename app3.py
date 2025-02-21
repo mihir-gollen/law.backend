@@ -21,7 +21,6 @@ DB_FAISS_PATH = "vectorstore/db_faiss"
 # Professional Theme Configuration
 st.set_page_config(page_title="Legal AI Assistant", layout="wide")
 
-# Styling
 st.markdown("""
     <style>
         body {
@@ -31,11 +30,11 @@ st.markdown("""
         .title {
             text-align: center;
             font-size: 32px;
-            color: #2c3e50;
+            color: #1a4d4d;
             font-weight: bold;
         }
         .sidebar {
-            background-color: #2c3e50;
+            background-color: #1a4d4d;
             color: white;
             padding: 20px;
             border-radius: 10px;
@@ -44,23 +43,34 @@ st.markdown("""
             padding: 10px;
         }
         .user-message {
-            background-color: #ecf0f1;
+            background-color: #dfe6e9;
             padding: 12px;
             border-radius: 10px;
             margin-bottom: 10px;
+            color: #2c3e50;
         }
         .assistant-message {
-            background-color:rgb(155, 244, 151);
+            background-color: #b2dfdb;
             padding: 12px;
             border-radius: 10px;
             margin-bottom: 10px;
+            color: #2c3e50;
         }
         .file-upload {
-            background-color: #34495e;
+            background-color: #16a085;
             padding: 15px;
             border-radius: 10px;
             color: white;
             text-align: center;
+        }
+        .stButton>button {
+            background-color: #1a4d4d;
+            color: white;
+            font-weight: bold;
+        }
+        .stTextInput input {
+            border: 1px solid #1a4d4d;
+            color: #1a4d4d;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -83,7 +93,7 @@ def get_vectorstore():
 def set_custom_prompt():
     return PromptTemplate(
         template="""
-        Use the following context to answer the user's question in a professional and structured manner.
+        Use the following context to answer the user's question in a professional and structured manner and easy to understand.
         Provide legal explanations with case references and clear formatting .
 
         Context: {context}
@@ -102,7 +112,7 @@ def load_llm():
         st.error("Hugging Face API token is missing. Please set it in your environment variables.")
         return None
 
-    HUGGINGFACE_REPO_ID = "mistralai/Mistral-7B-Instruct-v0.3"
+    HUGGINGFACE_REPO_ID = "mistral/Mistral-7B-Instruct-v0.3"
 
     try:
         llm = HuggingFaceEndpoint(
