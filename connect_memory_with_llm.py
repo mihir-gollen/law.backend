@@ -14,7 +14,7 @@ HF_TOKEN = os.environ.get("HF_TOKEN")
 if not HF_TOKEN:
     raise ValueError("Please set the HUGGINGFACE_API_TOKEN environment variable")
 
-HUGGINGFACE_REPO_ID = "mistral/Mistral-7B-Instruct-v0.3"
+HUGGINGFACE_REPO_ID = "mistralai/Mistral-7B-Instruct-v0.3"
 
 def load_llm(huggingface_repo_id):
     client = InferenceClient(
